@@ -51,6 +51,14 @@ See docs/ARCHITECTURE.md for more detail.
   - `python scripts/ingest_onchain.py`
 - Output: `data/ingest/upgrade_events.jsonl`
 
+## Phase 2: diff engine + report generator
+- Compare implementation bytecode + selectors across upgrades.
+- Details: `docs/REPORTS.md`.
+- Run:
+  - `pip install -r requirements.txt`
+  - `python scripts/generate_reports.py`
+- Output: `data/reports/*.json` and `data/reports/*.md`
+
 ## Roadmap
 - Phase 0: schema + fixtures
 - Phase 1: on-chain ingestion + watchlist
