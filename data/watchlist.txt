@@ -1,0 +1,5 @@
+# Example proxy addresses (replace with your own)
+# Aave v3 Pool (proxy)
+0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2
+# Uniswap v3 NonfungiblePositionManager (proxy)
+0xC36442b4a4522E871399CD717aBDD847Ab11FE88

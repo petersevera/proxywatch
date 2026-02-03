@@ -43,6 +43,14 @@ See docs/ARCHITECTURE.md for more detail.
   - `pip install -r requirements.txt`
   - `python scripts/validate_fixtures.py`
 
+## Phase 1: on-chain ingestion
+- Scan watchlisted proxies for upgrade events.
+- Details: `docs/INGEST_ONCHAIN.md`.
+- Run:
+  - `pip install -r requirements.txt`
+  - `python scripts/ingest_onchain.py`
+- Output: `data/ingest/upgrade_events.jsonl`
+
 ## Roadmap
 - Phase 0: schema + fixtures
 - Phase 1: on-chain ingestion + watchlist
