@@ -63,9 +63,12 @@ def main() -> int:
     watchlist_path = Path(
         _env_value("WATCHLIST_PATH", env_file, "data/watchlist.txt")
     )
-    lookback = _parse_int(_env_value("LOOKBACK_BLOCKS", env_file), 500)
+    lookback = _parse_int(_env_value("LOOKBACK_BLOCKS", env_file), 1)
     start_block = _parse_int(_env_value("START_BLOCK", env_file), -1)
     end_block = _parse_int(_env_value("END_BLOCK", env_file), -1)
+    if lookback < 1:
+        print("LOOKBACK_BLOCKS must be >= 1", file=sys.stderr)
+        return 1
 
     w3 = Web3(Web3.HTTPProvider(rpc_url))
     if not w3.is_connected():
@@ -76,7 +79,7 @@ def main() -> int:
     if end_block < 0:
         end_block = latest_block
     if start_block < 0:
-        start_block = max(0, end_block - lookback)
+        start_block = max(0, end_block - (lookback - 1))
 
     if start_block > end_block:
         print("START_BLOCK must be <= END_BLOCK", file=sys.stderr)
