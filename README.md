@@ -64,3 +64,10 @@ See docs/ARCHITECTURE.md for more detail.
 - Phase 1: on-chain ingestion + watchlist
 - Phase 2: diff engine + report generator
 - Phase 3: API + CLI
+
+## Phase 3: API + CLI
+- FastAPI read-only service for upgrade data.
+- Details: `docs/API.md`.
+- Run:
+  - `pip install -r requirements.txt`
+  - `python scripts/run_api.py`
